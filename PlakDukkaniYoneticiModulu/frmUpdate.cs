@@ -52,18 +52,33 @@ namespace PlakDukkaniYoneticiModulu
             }
             else
             {
-                db.Albums.Add(new Album()
+                bool albumVarMi = false;
+                foreach (Album item in db.Albums)
                 {
-                    AlbumAdi = txtAlbumName.Text,
-                    Fiyati = Convert.ToDecimal(txtPrice.Text),
-                    SanatciGrup = txtArtistName.Text,
-                    CikisTarihi = dateTimePicker1.Value,
-                    IndirimliMi = chkIndirim.Checked,
-                    SatistaMi = chkSatis.Checked,
-                    IndirimOrani = indirimOrani
-                });
-                AlbumleriYukle();
-                ClearTextBoxes();
+                    if(item.AlbumAdi == txtAlbumName.Text)
+                        albumVarMi = true;
+                    
+                }
+                if (albumVarMi == false) 
+                {
+                    db.Albums.Add(new Album()
+                    {
+                        AlbumAdi = txtAlbumName.Text,
+                        Fiyati = Convert.ToDecimal(txtPrice.Text),
+                        SanatciGrup = txtArtistName.Text,
+                        CikisTarihi = dateTimePicker1.Value,
+                        IndirimliMi = chkIndirim.Checked,
+                        SatistaMi = chkSatis.Checked,
+                        IndirimOrani = indirimOrani
+                    });
+                    AlbumleriYukle();
+                    ClearTextBoxes();
+                }
+                else
+                {
+                    MessageBox.Show("Album zaten mevcut, Update edebilirsiniz.");
+                }
+                
             }
         }
         public void ClearTextBoxes()
