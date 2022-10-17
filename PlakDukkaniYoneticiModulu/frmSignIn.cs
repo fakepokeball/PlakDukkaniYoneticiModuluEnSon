@@ -9,15 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PlakDukkaniYoneticiModulu
 {
+    
     public partial class frmSignIn : Form
     {
+        PDukDbContext db = new PDukDbContext();
         public frmSignIn()
         {
             InitializeComponent();
         }
-        PDukDbContext db = new PDukDbContext();
+        
+        
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             try
@@ -28,7 +32,7 @@ namespace PlakDukkaniYoneticiModulu
                 }
                 else
                 {
-                    
+
                     if (db.Admins.Any(x => x.KullaniciAdi == txtUsername.Text))
                     {
                         MessageBox.Show("Kullanıcı zaten mevcut!");
@@ -48,7 +52,7 @@ namespace PlakDukkaniYoneticiModulu
                             int ikiNokta = 0;
                             int arti = 0;
                             int yildiz = 0;
-                            
+
                             foreach (char c in pass)
                             {
                                 if (char.IsLetter(c))
@@ -80,10 +84,10 @@ namespace PlakDukkaniYoneticiModulu
                                 }
                             }
                             int toplamOzelKarakter = yildiz + unlem + ikiNokta + arti;
-                            if (buyukHarf >= 2 && kucukHarf>=3 && pass.Length>=8 && toplamOzelKarakter>=2 )
+                            if (buyukHarf >= 2 && kucukHarf >= 3 && pass.Length >= 8 && toplamOzelKarakter >= 2)
                             {
-                                if ((unlem>0&&ikiNokta>0)|| (unlem > 0 && arti > 0) || (unlem > 0 && yildiz > 0) || (ikiNokta > 0 && yildiz > 0) || (ikiNokta > 0 && arti > 0) || (arti > 0 && yildiz > 0))
-                                {  
+                                if ((unlem > 0 && ikiNokta > 0) || (unlem > 0 && arti > 0) || (unlem > 0 && yildiz > 0) || (ikiNokta > 0 && yildiz > 0) || (ikiNokta > 0 && arti > 0) || (arti > 0 && yildiz > 0))
+                                {
                                     Admin admin = new Admin();
 
                                     admin.Sifre = sha256_hash(txtPassword1.Text);
@@ -105,7 +109,7 @@ namespace PlakDukkaniYoneticiModulu
                                     MessageBox.Show("Olmadı");
                                 }
                             }
-                            
+
 
                         }
 
@@ -118,14 +122,17 @@ namespace PlakDukkaniYoneticiModulu
                 MessageBox.Show("Bir Hata Oluştu.");
             }
 
-
         }
+
+
         private string sha256_hash(string sifre)
         {
             using (SHA256 hash = SHA256Managed.Create())
             {
-                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(sifre)).Select(l => l.ToString("X2")));
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(sifre)).Select(l => l.ToString("x2")));
             }
         }
+
+
     }
 }

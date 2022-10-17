@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace PlakDukkaniYoneticiModulu
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
 
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace PlakDukkaniYoneticiModulu
             form.Width = panelDesktop.Width;
             form.Show();
         }
-
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.FormAc(new frmUpdate());
@@ -105,6 +105,23 @@ namespace PlakDukkaniYoneticiModulu
             {
                 MessageBox.Show("Bir Hata oluştu.");
             }
+        }
+
+     
+
+        private void lblUserNameMain_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void lblUserNameMain_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void lblUserNameMain_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

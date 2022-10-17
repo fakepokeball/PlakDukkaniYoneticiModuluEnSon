@@ -1,6 +1,6 @@
 ﻿namespace PlakDukkaniYoneticiModulu
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.btnDiscounts = new FontAwesome.Sharp.IconButton();
@@ -52,6 +52,7 @@
             this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -307,6 +308,7 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.Color.SlateGray;
+            this.panelDashboard.Controls.Add(this.label2);
             this.panelDashboard.Controls.Add(this.lblUserNameMain);
             this.panelDashboard.Controls.Add(this.label1);
             this.panelDashboard.Dock = System.Windows.Forms.DockStyle.Top;
@@ -317,14 +319,15 @@
             // 
             // lblUserNameMain
             // 
-            this.lblUserNameMain.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUserNameMain.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserNameMain.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblUserNameMain.Location = new System.Drawing.Point(525, 0);
+            this.lblUserNameMain.Location = new System.Drawing.Point(525, 37);
             this.lblUserNameMain.Name = "lblUserNameMain";
-            this.lblUserNameMain.Size = new System.Drawing.Size(231, 69);
+            this.lblUserNameMain.Size = new System.Drawing.Size(231, 32);
             this.lblUserNameMain.TabIndex = 1;
             this.lblUserNameMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUserNameMain.MouseEnter += new System.EventHandler(this.lblUserNameMain_MouseEnter);
+            this.lblUserNameMain.MouseLeave += new System.EventHandler(this.lblUserNameMain_MouseLeave);
             // 
             // label1
             // 
@@ -410,7 +413,18 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // Form1
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Location = new System.Drawing.Point(609, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 30);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Hoşgeldin";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -421,7 +435,7 @@
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Record Shop";
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -459,6 +473,7 @@
         private FontAwesome.Sharp.IconButton btnOnSales;
         private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconButton btnLogin;
+        private System.Windows.Forms.Label label2;
     }
 }
 

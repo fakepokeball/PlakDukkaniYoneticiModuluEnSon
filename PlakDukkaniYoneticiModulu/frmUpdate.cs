@@ -28,7 +28,6 @@ namespace PlakDukkaniYoneticiModulu
         }
 
         private decimal indirimOrani;
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -45,7 +44,6 @@ namespace PlakDukkaniYoneticiModulu
                     MessageBox.Show("İndirim oranını boş bıraktınız.");
                 }
             }
-
             if(string.IsNullOrEmpty(txtAlbumName.Text) || string.IsNullOrEmpty(txtArtistName.Text) || string.IsNullOrEmpty(txtPrice.Text))
             {
                 MessageBox.Show("Bilgileri eksik girdiniz.");
@@ -56,8 +54,7 @@ namespace PlakDukkaniYoneticiModulu
                 foreach (Album item in db.Albums)
                 {
                     if(item.AlbumAdi == txtAlbumName.Text)
-                        albumVarMi = true;
-                    
+                        albumVarMi = true;                    
                 }
                 if (albumVarMi == false) 
                 {
@@ -77,8 +74,7 @@ namespace PlakDukkaniYoneticiModulu
                 else
                 {
                     MessageBox.Show("Album zaten mevcut, Update edebilirsiniz.");
-                }
-                
+                } 
             }
         }
         public void ClearTextBoxes()
@@ -159,11 +155,16 @@ namespace PlakDukkaniYoneticiModulu
         }
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int id = (int)dgvAlbumler.SelectedRows[0].Cells[0].Value;
-            Album silinecekAlbum = db.Albums.FirstOrDefault(x => x.AlbumId == id);
-            db.Albums.Remove(silinecekAlbum);
-            AlbumleriYukle();
-            ClearTextBoxes();  
+            DialogResult dr = MessageBox.Show("Silmek istediğinize emin misiniz?", "UYARI",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (dr==DialogResult.Yes)
+            {
+                int id = (int)dgvAlbumler.SelectedRows[0].Cells[0].Value;
+                Album silinecekAlbum = db.Albums.FirstOrDefault(x => x.AlbumId == id);
+                db.Albums.Remove(silinecekAlbum);
+                AlbumleriYukle();
+                ClearTextBoxes();
+            }
+
         }
         private void frmUpdate_Load(object sender, EventArgs e)
         {

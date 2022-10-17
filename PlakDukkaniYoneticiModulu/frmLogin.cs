@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,16 +49,14 @@ namespace PlakDukkaniYoneticiModulu
                                 else
                                 {
                                     item.Visible = true;
-                                }
-                                
+                                }                                
                             }
-
                         }
                         foreach (Control item in dashboard.Controls)
                         {
                             if (item.Name.Contains("lbl"))
                             {
-                                item.Text = "Hoşgeldin " + txtUsername.Text;
+                                item.Text =  txtUsername.Text;
                             }
                         }
                         //albumler sayfasına yönlendirebiliriz
@@ -67,7 +66,6 @@ namespace PlakDukkaniYoneticiModulu
                     {
                         MessageBox.Show("Hatalı giriş yaptınız.");
                     }
-
                 }
                 else
                 {
@@ -77,9 +75,12 @@ namespace PlakDukkaniYoneticiModulu
             catch (Exception)
             {
                 MessageBox.Show("Bir Hata oluştu.");
-            }  
+            } 
+            
         }
+        
     }
+    
 }
 
 // ?ADminn:
