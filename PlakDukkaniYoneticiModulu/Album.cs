@@ -10,6 +10,7 @@ namespace PlakDukkaniYoneticiModulu
     internal class Album
     {
         [Key]
+        //id gözükmesin istersek private yapcaz
         public int AlbumId { get; set; }
 
         [Required, MaxLength(32)]
@@ -23,7 +24,9 @@ namespace PlakDukkaniYoneticiModulu
 
         [Required]
         public decimal Fiyati { get; set; }
-        public decimal İndirimOrani { get; set; }
+        public decimal IndirimOrani { get; set; }
+        public bool IndirimliMi { get; set; }
+
 
         [Required]
         public bool SatistaMi { get; set; }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAdSoyad = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSignIn = new FontAwesome.Sharp.IconButton();
@@ -37,8 +39,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSignIn = new System.Windows.Forms.Label();
-            this.txtAdSoyad = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 411);
             this.panel1.TabIndex = 0;
+            // 
+            // txtAdSoyad
+            // 
+            this.txtAdSoyad.Location = new System.Drawing.Point(216, 255);
+            this.txtAdSoyad.Name = "txtAdSoyad";
+            this.txtAdSoyad.Size = new System.Drawing.Size(212, 20);
+            this.txtAdSoyad.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(62, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Name Surname";
             // 
             // txtPassword2
             // 
@@ -137,23 +154,6 @@
             this.lblSignIn.TabIndex = 8;
             this.lblSignIn.Text = "SIGN IN";
             this.lblSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAdSoyad
-            // 
-            this.txtAdSoyad.Location = new System.Drawing.Point(216, 255);
-            this.txtAdSoyad.Name = "txtAdSoyad";
-            this.txtAdSoyad.Size = new System.Drawing.Size(212, 20);
-            this.txtAdSoyad.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(62, 255);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Ad Soyad";
             // 
             // frmSignIn
             // 

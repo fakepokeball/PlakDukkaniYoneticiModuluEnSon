@@ -43,7 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDashboard = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblUserNameMain = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -170,6 +169,7 @@
             this.btnOnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOnSales.UseVisualStyleBackColor = true;
             this.btnOnSales.Visible = false;
+            this.btnOnSales.Click += new System.EventHandler(this.btnOnSales_Click_1);
             // 
             // btnPast
             // 
@@ -307,7 +307,6 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.Color.SlateGray;
-            this.panelDashboard.Controls.Add(this.txtSearch);
             this.panelDashboard.Controls.Add(this.lblUserNameMain);
             this.panelDashboard.Controls.Add(this.label1);
             this.panelDashboard.Dock = System.Windows.Forms.DockStyle.Top;
@@ -316,26 +315,16 @@
             this.panelDashboard.Size = new System.Drawing.Size(756, 69);
             this.panelDashboard.TabIndex = 1;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(319, 9);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(342, 20);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.Text = "Search for some thing...";
-            this.txtSearch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseDoubleClick);
-            // 
             // lblUserNameMain
             // 
-            this.lblUserNameMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUserNameMain.Location = new System.Drawing.Point(439, 43);
+            this.lblUserNameMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblUserNameMain.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserNameMain.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblUserNameMain.Location = new System.Drawing.Point(525, 0);
             this.lblUserNameMain.Name = "lblUserNameMain";
-            this.lblUserNameMain.Size = new System.Drawing.Size(231, 23);
+            this.lblUserNameMain.Size = new System.Drawing.Size(231, 69);
             this.lblUserNameMain.TabIndex = 1;
+            this.lblUserNameMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -370,7 +359,7 @@
             this.ıconButton3.IconColor = System.Drawing.Color.Black;
             this.ıconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ıconButton3.IconSize = 29;
-            this.ıconButton3.Location = new System.Drawing.Point(643, 0);
+            this.ıconButton3.Location = new System.Drawing.Point(723, 0);
             this.ıconButton3.Name = "ıconButton3";
             this.ıconButton3.Size = new System.Drawing.Size(30, 28);
             this.ıconButton3.TabIndex = 2;
@@ -382,7 +371,7 @@
             this.ıconButton2.IconColor = System.Drawing.Color.Black;
             this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ıconButton2.IconSize = 30;
-            this.ıconButton2.Location = new System.Drawing.Point(607, 0);
+            this.ıconButton2.Location = new System.Drawing.Point(687, 0);
             this.ıconButton2.Name = "ıconButton2";
             this.ıconButton2.Size = new System.Drawing.Size(30, 28);
             this.ıconButton2.TabIndex = 1;
@@ -394,7 +383,7 @@
             this.ıconButton1.IconColor = System.Drawing.Color.Black;
             this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ıconButton1.IconSize = 30;
-            this.ıconButton1.Location = new System.Drawing.Point(571, 0);
+            this.ıconButton1.Location = new System.Drawing.Point(651, 0);
             this.ıconButton1.Name = "ıconButton1";
             this.ıconButton1.Size = new System.Drawing.Size(30, 28);
             this.ıconButton1.TabIndex = 0;
@@ -465,7 +454,6 @@
         private FontAwesome.Sharp.IconButton ıconButton2;
         private FontAwesome.Sharp.IconButton ıconButton1;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconButton btnDiscounts;
         private FontAwesome.Sharp.IconButton btnNewAlbums;
         private FontAwesome.Sharp.IconButton btnOnSales;

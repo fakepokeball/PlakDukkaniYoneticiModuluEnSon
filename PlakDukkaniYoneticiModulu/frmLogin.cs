@@ -15,13 +15,12 @@ namespace PlakDukkaniYoneticiModulu
     public partial class frmLogin : Form
     {
         private Panel pnl;
-        public frmLogin(Panel panel)
+        private Panel dashboard;
+        public frmLogin(Panel panel,Panel dash)
         {
             InitializeComponent();
             pnl = panel;
-
-            
-            
+            dashboard = dash;
         }
         PDukDbContext db = new PDukDbContext();
         private void Login_Load(object sender, EventArgs e)
@@ -52,9 +51,21 @@ namespace PlakDukkaniYoneticiModulu
                                 }
                                 
                             }
+
+                        }
+                        foreach (Control item in dashboard.Controls)
+                        {
+                            if (item.Name.Contains("lbl"))
+                            {
+                                item.Text = "Hoşgeldin " + txtUsername.Text;
+                            }
                         }
                         //albumler sayfasına yönlendirebiliriz
-                        this.Close();
+                        this.Close();                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hatalı giriş yaptınız.");
                     }
 
                 }
@@ -65,10 +76,8 @@ namespace PlakDukkaniYoneticiModulu
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Bir Hata oluştu.");
-            }
-            
+            }  
         }
     }
 }

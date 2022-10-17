@@ -51,12 +51,8 @@ namespace PlakDukkaniYoneticiModulu
             this.FormAc(new frmFinished());
         }
 
-        private void txtSearch_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            txtSearch.Clear();
-        }
-
-        private void btnOnSales_Click(object sender, EventArgs e)
+        
+        private void btnOnSales_Click_1(object sender, EventArgs e)
         {
             this.FormAc(new frmOnSales());
         }
@@ -73,8 +69,7 @@ namespace PlakDukkaniYoneticiModulu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.FormAc(new frmLogin(this.panelMenu));
-
+            this.FormAc(new frmLogin(this.panelMenu,this.panelDashboard));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -105,15 +100,9 @@ namespace PlakDukkaniYoneticiModulu
                         }
                     }
                 }
-               
-               
-
-
-
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Bir Hata oluştu.");
             }
         }

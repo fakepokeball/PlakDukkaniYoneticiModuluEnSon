@@ -10,29 +10,32 @@ using System.Windows.Forms;
 
 namespace PlakDukkaniYoneticiModulu
 {
-    public partial class frmOnSales : Form
+    public partial class frmFinished : Form
     {
         PDukDbContext db = new PDukDbContext();
-        public frmOnSales()
+        
+        public frmFinished()
         {
             InitializeComponent();
             AlbumleriYenile();
+
         }
-        public void AlbumleriYenile()
+
+        private void AlbumleriYenile()
         {
-            dgvOnSales.Rows.Clear();
+            dgvFinishedWork.Rows.Clear();
             foreach (Album item in db.Albums.ToList())
             {
-                if (item.SatistaMi)
+                if (!item.SatistaMi)
                 {
-                    
-                    dgvOnSales.Rows.Add(item.AlbumAdi, item.SanatciGrup);
+
+                    dgvFinishedWork.Rows.Add(item.AlbumAdi, item.SanatciGrup);
                 }
 
             }
         }
 
-        private void frmOnSales_Load(object sender, EventArgs e)
+        private void frmFinished_Load(object sender, EventArgs e)
         {
             AlbumleriYenile();
         }

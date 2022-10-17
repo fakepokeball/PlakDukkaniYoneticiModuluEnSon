@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDiscounts = new System.Windows.Forms.DataGridView();
+            this.AlbumAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SanatciGrup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscounts)).BeginInit();
             this.SuspendLayout();
@@ -46,13 +48,31 @@
             // 
             // dgvDiscounts
             // 
+            this.dgvDiscounts.AllowUserToAddRows = false;
+            this.dgvDiscounts.AllowUserToDeleteRows = false;
             this.dgvDiscounts.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvDiscounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscounts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDiscounts.Location = new System.Drawing.Point(0, 106);
+            this.dgvDiscounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AlbumAdi,
+            this.SanatciGrup});
+            this.dgvDiscounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDiscounts.Location = new System.Drawing.Point(0, 0);
             this.dgvDiscounts.Name = "dgvDiscounts";
-            this.dgvDiscounts.Size = new System.Drawing.Size(800, 344);
+            this.dgvDiscounts.ReadOnly = true;
+            this.dgvDiscounts.Size = new System.Drawing.Size(800, 450);
             this.dgvDiscounts.TabIndex = 0;
+            // 
+            // AlbumAdi
+            // 
+            this.AlbumAdi.HeaderText = "Album Adı";
+            this.AlbumAdi.Name = "AlbumAdi";
+            this.AlbumAdi.ReadOnly = true;
+            // 
+            // SanatciGrup
+            // 
+            this.SanatciGrup.HeaderText = "Sanatçı/Grup";
+            this.SanatciGrup.Name = "SanatciGrup";
+            this.SanatciGrup.ReadOnly = true;
             // 
             // frmDiscounts
             // 
@@ -62,6 +82,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmDiscounts";
             this.Text = "frmDiscounts";
+            this.Load += new System.EventHandler(this.frmDiscounts_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscounts)).EndInit();
             this.ResumeLayout(false);
@@ -72,5 +93,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvDiscounts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AlbumAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SanatciGrup;
     }
 }

@@ -13,7 +13,7 @@
                     {
                         YoneticiId = c.Int(nullable: false, identity: true),
                         KullaniciAdi = c.String(nullable: false, maxLength: 32),
-                        Sifre = c.String(nullable: false, maxLength: 32),
+                        Sifre = c.String(nullable: false),
                         AdSoyad = c.String(nullable: false, maxLength: 64),
                         KayitTarihi = c.DateTime(nullable: false),
                     })
@@ -28,7 +28,8 @@
                         SanatciGrup = c.String(nullable: false, maxLength: 64),
                         CikisTarihi = c.DateTime(nullable: false),
                         Fiyati = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        İndirimOrani = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        IndirimOrani = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        IndirimliMi = c.Boolean(nullable: false),
                         SatistaMi = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.AlbumId);

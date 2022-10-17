@@ -16,7 +16,6 @@ namespace PlakDukkaniYoneticiModulu
         public frmSignIn()
         {
             InitializeComponent();
-
         }
         PDukDbContext db = new PDukDbContext();
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -50,7 +49,6 @@ namespace PlakDukkaniYoneticiModulu
                             int arti = 0;
                             int yildiz = 0;
                             
-
                             foreach (char c in pass)
                             {
                                 if (char.IsLetter(c))
@@ -80,20 +78,18 @@ namespace PlakDukkaniYoneticiModulu
                                 {
                                     yildiz++;
                                 }
-
-
                             }
                             int toplamOzelKarakter = yildiz + unlem + ikiNokta + arti;
                             if (buyukHarf >= 2 && kucukHarf>=3 && pass.Length>=8 && toplamOzelKarakter>=2 )
                             {
                                 if ((unlem>0&&ikiNokta>0)|| (unlem > 0 && arti > 0) || (unlem > 0 && yildiz > 0) || (ikiNokta > 0 && yildiz > 0) || (ikiNokta > 0 && arti > 0) || (arti > 0 && yildiz > 0))
-                                {
-                                    
+                                {  
                                     Admin admin = new Admin();
 
                                     admin.Sifre = sha256_hash(txtPassword1.Text);
                                     admin.AdSoyad = txtAdSoyad.Text;
                                     admin.KullaniciAdi = txtUsername.Text;
+                                    admin.KayitTarihi = DateTime.Now;
 
                                     db.Admins.Add(admin);
                                     db.SaveChanges();

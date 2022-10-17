@@ -13,7 +13,7 @@ namespace PlakDukkaniYoneticiModulu.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202209221855504_ilk"; }
+            get { return "202210161819469_ilk"; }
         }
         
         string IMigrationMetadata.Source

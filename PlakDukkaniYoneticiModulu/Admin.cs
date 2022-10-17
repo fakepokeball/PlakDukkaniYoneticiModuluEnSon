@@ -18,7 +18,7 @@ namespace PlakDukkaniYoneticiModulu
         [Column(Order = 2), MaxLength(32)]
         public string KullaniciAdi { get; set; }
 
-        [Required, MinLength(8), MaxLength(32)]
+        [Required, MinLength(8)]
         public string Sifre { get; set; }
 
         [Required, MaxLength(64)]
